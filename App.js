@@ -9,10 +9,12 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [nextUrl, setNextUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
+ // Chama a função fetchPokemon
   useEffect(() => {
     fetchPokemon();
   }, []);
 
+// busca os dados dos Pokémon da API
   const fetchPokemon = () => {
     axios.get(nextUrl)
       .then(response => {
@@ -22,8 +24,10 @@ export default function App() {
       .catch(error => console.error(error)); 
   };
 
+ // Renderiza cada item da lista
   const renderItem = ({ item }) => <PokemonCard data={item} />;
 
+ // Filtra a lista de Pokémon com base na pesquisa
   const filteredList = list.filter(pokemon =>
     pokemon.name.toLowerCase().includes(search.toLowerCase())
   );

@@ -6,6 +6,7 @@ import { getCardColor } from '../Utils/colors';
 export default function PokemonCard({ data }) {
   const [details, setDetails] = useState(null);
 
+// Efeito para buscar os detalhes do Pokémon quando a URL muda
   useEffect(() => {
     axios
       .get(data.url)
@@ -13,10 +14,12 @@ export default function PokemonCard({ data }) {
       .catch((error) => console.error(error));
   }, [data.url]);
 
+ // Se os detalhes ainda não foram carregados, exibe "Loading..."
   if (details === null) {
     return <Text>Loading...</Text>;
   }
 
+  // Retorna o card do Pokémon com suas informações
   return (
     <View
       style={[
@@ -27,18 +30,18 @@ export default function PokemonCard({ data }) {
         <Text style={styles.pokemonId}>
           #{details.id.toString().padStart(3, '0')}
         </Text>
-        <Text style={styles.pokemonName}>{details.name}</Text>
+        <Text style={styles.pokemonNome}>{details.name}</Text>
         <View style={styles.typesContainer}>
           {details.types.map((typeInfo) => (
-            <View key={typeInfo.type.name} style={styles.typeBadge}>
-              <Text style={styles.typeText}>{typeInfo.type.name}</Text>
+            <View key={typeInfo.type.name} style={styles.pokemonTipo}>
+              <Text style={styles.pokemonTexto}>{typeInfo.type.name}</Text>
             </View>
           ))}
         </View>
       </View>
       <Image
         source={{ uri: details.sprites.front_default }}
-        style={styles.pokemonImage}
+        style={styles.pokemonImagem}
       />
     </View>
   );
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#17171B99',
   },
-  pokemonName: {
+  pokemonNome: {
     fontSize: 26,
     fontWeight: 'bold',
     color: '#FFFFFF',
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontWeight: 'bold',
   },
-  typeBadge: {
+  pokemonTipo: {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     width: '61px',
     height: '25px',
@@ -81,13 +84,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginRight: 5,
   },
-  typeText: {
+  pokemonTexto: {
     fontSize: 12,
     color: '#FFF',
     textTransform: 'capitalize',
      fontWeight: 'bold',
   },
-  pokemonImage: {
+  pokemonImagem: {
     width: 130,
     height: 130,
   },
