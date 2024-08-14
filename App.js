@@ -33,7 +33,7 @@ export default function App() {
       <Text style={styles.texto}>Pokédex</Text>
       <Text style={styles.subtexto}>Procure Pokémon pelo nome ou usando o número Pokédex Nacional.</Text>
       <TextInput
-        style={styles.searchInput}
+        style={styles.pesquisar}
         placeholder="Que Pokémon você está procurando?"
         value={search}
         onChangeText={setSearch}
@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
     color: '#747476',
     marginBottom: 20,
   },
-  searchInput: {
+  pesquisar: {
     backgroundColor: '#F2F2F2',
     color: '#747476',
     padding: 15,
     borderRadius: 10,
     marginBottom: 20,
-    width: '95%',
+    width: '334px',
   },
 });
