@@ -7,8 +7,7 @@
 > npm install react react-native axios
 >```
 >
-> Iniciar o Projeto
-> Inicie o servidor de desenvolvimento do Expo:
+> ### Iniciar o Projeto
 >  ```
 >  npx expo start
 > ```
