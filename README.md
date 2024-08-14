@@ -2,7 +2,9 @@
 > ### ANTES DE INICIAR
 
 > [!NOTE]
+> ### BLIBLIOTECAS
 >```
+> npm install styled-components --legacy-peer-deps
 > npm install axios
 > npm install react react-native axios
 >```
