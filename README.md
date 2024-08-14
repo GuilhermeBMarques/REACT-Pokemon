@@ -7,6 +7,7 @@
 > npm install react react-native axios
 >```
 >
+>
 > ### Iniciar o Projeto
 >  ```
 >  npx expo start
