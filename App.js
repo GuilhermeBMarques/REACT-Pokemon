@@ -5,8 +5,11 @@ import { StyleSheet, Text, View, FlatList, TextInput } from 'react-native';
 import PokemonCard from './components/PokemonCard';
 
 export default function App() {
+  // Armazena a lista de Pokémon.
   const [list, setList] = useState([]);
+  // Aarmazena o termo de pesquisa.
   const [search, setSearch] = useState("");
+  // Armazenar a URL da próxima página de Pokémon a ser carregada. 
   const [nextUrl, setNextUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
  // Chama a função fetchPokemon
