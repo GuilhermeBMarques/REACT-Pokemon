@@ -62,7 +62,6 @@ const PokemonDetails = ({ pokemon, onBack }) => {
           )}
         </View>
 
-        {/* Botão Voltar */}
         <View style={styles.buttonContainer}>
           <Button title="Voltar" onPress={onBack} color="#00796b" />
         </View>

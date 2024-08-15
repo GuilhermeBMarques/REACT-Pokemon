@@ -17,7 +17,6 @@ const SearchInput = ({ query, onChange, onSearch }) => {
   );
 };
 
-// Estilos para o componente de input
 const styles = StyleSheet.create({
   container: {
     padding: 20,

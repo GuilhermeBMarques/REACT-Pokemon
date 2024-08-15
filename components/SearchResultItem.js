@@ -14,9 +14,9 @@ const SearchResultItem = ({ item, onSelect }) => {
       .catch(error => console.error(error));
   }, [item.url]);
 
-  // Retorna "Loading..." até que os detalhes sejam carregados
+  // Retorna "Carregando..." até que os detalhes sejam carregados
   if (!details) {
-    return <Text>Loading...</Text>;
+    return <Text>Carregando...</Text>;
   }
 
   return (
@@ -86,8 +86,5 @@ const styles = StyleSheet.create({
     height: 130,
   },
 });
-<<<<<<< HEAD:components/SearchResultItem.js
 
 export default SearchResultItem;
-=======
->>>>>>> cb3b00b8eb09e2ba31aff371ffacf0244fa9f0de:componentes/PokemonCard.js
