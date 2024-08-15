@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import axios from 'axios';
-import { getCardColor } from '../Utils/colors';
 
-export default function PokemonCard({ data }) {
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import axios from 'axios';
+import { getCardColor } from '../utils/colors';
+
+const SearchResultItem = ({ item, onSelect }) => {
   const [details, setDetails] = useState(null);
 
-// Efeito para buscar os detalhes do Pokémon quando a URL muda
+  // Busca os detalhes do Pokémon ao carregar o componente
   useEffect(() => {
-    axios
-      .get(data.url)
-      .then((response) => setDetails(response.data))
-      .catch((error) => console.error(error));
-  }, [data.url]);
+    axios.get(item.url)
+      .then(response => setDetails(response.data))
+      .catch(error => console.error(error));
+  }, [item.url]);
 
- // Se os detalhes ainda não foram carregados, exibe "Loading..."
-  if (details === null) {
+  // Retorna "Loading..." até que os detalhes sejam carregados
+  if (!details) {
     return <Text>Loading...</Text>;
   }
 
-  // Retorna o card do Pokémon com suas informações
   return (
-    <View
-      style={[
-        styles.card,
-        { backgroundColor: getCardColor(details.types[0].type.name) },
-      ]}>
+    <TouchableOpacity onPress={() => onSelect(details)} style={[styles.card, { backgroundColor: getCardColor(details.types[0].type.name) }]}>
       <View>
         <Text style={styles.pokemonId}>
           #{details.id.toString().padStart(3, '0')}
@@ -43,15 +38,14 @@ export default function PokemonCard({ data }) {
         source={{ uri: details.sprites.front_default }}
         style={styles.pokemonImagem}
       />
-    </View>
+    </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
   card: {
-    width: '334px',
-    height: '115px',
-    top: '26px',
+    width: '100%',
+    height: 115,
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
@@ -76,22 +70,21 @@ const styles = StyleSheet.create({
   },
   pokemonTipo: {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    width: '61px',
-    height: '25px',
     borderRadius: 3,
     paddingHorizontal: 5,
     paddingVertical: 5,
-    fontWeight: 'bold',
     marginRight: 5,
   },
   pokemonTexto: {
     fontSize: 12,
     color: '#FFF',
     textTransform: 'capitalize',
-     fontWeight: 'bold',
+    fontWeight: 'bold',
   },
   pokemonImagem: {
     width: 130,
     height: 130,
   },
 });
+
+export default SearchResultItem;

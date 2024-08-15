@@ -1,0 +1,78 @@
+## App.js:
+
+Descrição: Arquivo principal que controla a lógica do aplicativo e a renderização dos componentes.
+Função:
+Gerencia estados para a lista de Pokémon, busca, URL para carregamento de mais Pokémon, e o Pokémon selecionado.
+Contém funções para buscar Pokémon, pesquisar Pokémon específicos, e mostrar detalhes do Pokémon selecionado.
+Renderiza a tela principal com uma lista de Pokémon e um campo de busca ou a tela de detalhes do Pokémon selecionado.
+
+##components/PokemonDetails.js:
+
+Descrição: Componente que exibe detalhes do Pokémon selecionado.
+Função:
+Mostra informações detalhadas sobre o Pokémon, incluindo nome, tipo, peso, altura e suas evoluções.
+Utiliza um ScrollView para permitir a rolagem da tela de detalhes.
+Inclui um botão para voltar à tela de pesquisa.
+
+
+## components/SearchInput.js:
+
+Descrição: Componente que fornece um campo de entrada para a pesquisa de Pokémon.
+Função:
+Permite ao usuário digitar o nome do Pokémon que deseja buscar.
+Inclui um botão para iniciar a busca.
+
+## components/SearchResultItem.js:
+
+Descrição: Componente para exibir cada item de resultado na lista de Pokémon.
+Função:
+Mostra uma imagem e o nome do Pokémon.
+Permite a seleção do Pokémon para exibir seus detalhes.
+
+
+##Utils/colors.js:
+
+Descrição: Utilitário que fornece cores para estilização com base no tipo de Pokémon.
+Função:
+Retorna uma cor específica para cada tipo de Pokémon, como grass, fire, water, etc.
+
+
+Fluxo de Dados
+
+Tela Principal (App.js):
+
+Estado: Mantém a lista de Pokémon e o Pokémon selecionado.
+Componentes: Renderiza SearchInput, FlatList para exibir resultados de pesquisa e PokemonDetails para mostrar detalhes do Pokémon selecionado.
+
+Tela de Detalhes (PokemonDetails.js):
+
+Propriedades: Recebe dados do Pokémon selecionado e a função para voltar à tela de pesquisa.
+Rolagem: Usa ScrollView para permitir que o usuário role para visualizar todos os detalhes do Pokémon.
+
+Campo de Pesquisa (SearchInput.js):
+
+Propriedades: Recebe o texto da pesquisa e as funções para atualizar o texto e iniciar a busca.
+
+Itens da Lista (SearchResultItem.js):
+
+Propriedades: Recebe dados de um Pokémon e a função para selecionar o Pokémon.
+Função: Exibe informações básicas do Pokémon e permite a seleção para ver mais detalhes.
+
+Cores (colors.js):
+
+Função: Fornece uma função para obter cores com base no tipo do Pokémon para estilizar componentes como o PokemonCard.
+
+
+
+
+Instalar o Expo CLI (para projetos Expo):
+
+npm install -g expo-cli
+
+Axios: Para fazer requisições HTTP    
+
+npm install axios
+
+Rodar o Projeto
+
+npm start
