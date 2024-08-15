@@ -14,11 +14,10 @@ const SearchResults = ({ results, onSelect }) => {
   );
 };
 
-// Estilos para o componente
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: '#f5f5f5', // Cor para a tela de pesquisa
+    backgroundColor: '#f5f5f5', 
   },
 });
 
