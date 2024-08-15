@@ -86,5 +86,8 @@ const styles = StyleSheet.create({
     height: 130,
   },
 });
+<<<<<<< HEAD:components/SearchResultItem.js
 
 export default SearchResultItem;
+=======
+>>>>>>> cb3b00b8eb09e2ba31aff371ffacf0244fa9f0de:componentes/PokemonCard.js

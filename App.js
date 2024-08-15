@@ -5,6 +5,7 @@ import PokemonDetails from './components/PokemonDetails';
 import SearchInput from './components/SearchInput';
 import SearchResultItem from './components/SearchResultItem';
 
+<<<<<<< HEAD
 // Componente principal do aplicativo
 const App = () => {
   // Estados do aplicativo
@@ -12,6 +13,15 @@ const App = () => {
   const [search, setSearch] = useState(''); // Texto da pesquisa
   const [nextUrl, setNextUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20'); // URL para buscar mais Pokémon
   const [selectedPokemon, setSelectedPokemon] = useState(null); // Pokémon selecionado para mostrar detalhes
+=======
+export default function App() {
+  // Armazena a lista de Pokémon.
+  const [list, setList] = useState([]);
+  // Aarmazena o termo de pesquisa.
+  const [search, setSearch] = useState("");
+  // Armazenar a URL da próxima página de Pokémon a ser carregada. 
+  const [nextUrl, setNextUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
+>>>>>>> cb3b00b8eb09e2ba31aff371ffacf0244fa9f0de
 
   // Efeito para buscar Pokémon quando o componente é montado
   useEffect(() => {
@@ -135,6 +145,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
   },
+<<<<<<< HEAD
 });
 
 export default App;
+=======
+  pesquisar: {
+    backgroundColor: '#F2F2F2',
+    color: '#747476',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 20,
+    width: '334px',
+  },
+});
+>>>>>>> cb3b00b8eb09e2ba31aff371ffacf0244fa9f0de
